@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    @opinion = Opinion.new
   end
 
   # GET /articles/new
@@ -24,7 +25,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if client_signed_in?
-      @article.client.id = current_client.id
+      @article.client = current_client
     else
       @article.client_id = 2
     end

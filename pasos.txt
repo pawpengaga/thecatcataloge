@@ -8,3 +8,10 @@ bundle add devise
 5. rails g scaffold article title picture description client:references
 6. rails g model opinion content article:references client:references
 7. rails g model reaction kind article:references client:references opinion:references
+
+=========LA LOCURA NO DOCUMENTADA================
+
+hechos cambios en el controlador de articulos, ahora el id predeterminado si no hay cuentas con sesion activa es el 2. el annonymous.
+
+editado el after sign in del ApplicationController
+creado el controlador de comentarios (opiniones)

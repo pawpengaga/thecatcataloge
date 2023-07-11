@@ -1,0 +1,21 @@
+<%= form_with(model: @opinion, local: true) do |f| %>
+
+    <% if @opinion.errors.any? %>
+        <div id = 'error_explanation'>
+            <h2>Este comentario no se pudo crear por las siguientes razones</h2>
+            <ul>
+                <% @opinion.errors.full_messages.each do |msg|%>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <%= f.hidden_field :article_id, value: @article.id %>
+    <div class = 'field'>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+    <div class = 'actions'>
+        <%= f.submit %>
+    </div>
+<% end %>
