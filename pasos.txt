@@ -1,0 +1,10 @@
+bundle add faker
+bundle add devise
+1. rails g devise:install
+2. rails g devise client photo name
+3. rails g devise:views
+4. rails g devise:controllers clients
+
+5. rails g scaffold article title picture description client:references
+6. rails g model opinion content article:references client:references
+7. rails g model reaction kind article:references client:references opinion:references
