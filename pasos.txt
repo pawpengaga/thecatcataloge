@@ -15,3 +15,6 @@ hechos cambios en el controlador de articulos, ahora el id predeterminado si no 
 
 editado el after sign in del ApplicationController
 creado el controlador de comentarios (opiniones)
+Reparado el controlador de comentarios, ahora los comentarios se muestran
+
+-----------------------

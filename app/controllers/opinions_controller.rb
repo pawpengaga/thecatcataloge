@@ -1,4 +1,8 @@
 class OpinionsController < ApplicationController
+    def index
+        @client = Client.find(params[:client_id])
+        @opinions = @client.opinions
+    end
     def create
         @article = Article.find(params[:opinion][:article_id])
         

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_11_084832) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_11_105851) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,12 +52,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_11_084832) do
     t.string "kind"
     t.bigint "article_id", null: false
     t.bigint "client_id", null: false
-    t.bigint "opinion_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_reactions_on_article_id"
     t.index ["client_id"], name: "index_reactions_on_client_id"
-    t.index ["opinion_id"], name: "index_reactions_on_opinion_id"
   end
 
   add_foreign_key "articles", "clients"
@@ -65,5 +63,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_11_084832) do
   add_foreign_key "opinions", "clients"
   add_foreign_key "reactions", "articles"
   add_foreign_key "reactions", "clients"
-  add_foreign_key "reactions", "opinions"
 end

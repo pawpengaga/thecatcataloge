@@ -9,6 +9,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     @opinion = Opinion.new
+
+    @article = Article.find(params[:id])
+    @opinions = @article.opinions
   end
 
   # GET /articles/new

@@ -2,6 +2,10 @@
 
 <%= render @article %>
 <%= render 'opinions/form' %>
+
+<% @opinions.each do |opinion| %>
+  <div class="mb-3"><%= render partial: "opinions/opinion", locals: { opinion: opinion } %></div>
+<% end %>
 <div>
   <%= link_to "Edit this article", edit_article_path(@article) %> |
   <%= link_to "Back to articles", articles_path %>
