@@ -6,7 +6,7 @@
 
   <p>
     <strong>Picture:</strong>
-    <%= article.picture %>
+    <%=image_tag article.picture, class: "col-3" %>
   </p>
 
   <p>
@@ -15,8 +15,8 @@
   </p>
 
   <p>
-    <strong>Client:</strong>
-    <%= article.client_id %>
+    <strong>Por:</strong>
+    <%= article.client.name %>
   </p>
 
 </div>

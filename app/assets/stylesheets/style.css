@@ -1,0 +1,42 @@
+:root{
+    --accent: rgb(228, 30, 96);
+    --seccon: rgb(247, 63, 118);
+}
+
+body{
+    font-family: 'Karla', sans-serif;
+}
+
+.myalerts{
+    position: fixed;
+    top: 0;
+}
+
+.mylogo{
+    width: 20%;
+}
+.mynav{
+    background-color: rgb(0, 0, 0);
+}
+
+/*************************/
+
+.mylinks:hover{
+    background-color: var(--accent) !important;
+}
+
+.mybtn{
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.mybtn:hover{
+    background-color: var(--seccon);
+    color: white;
+    border-color: var(--seccon);
+}
+
+.mypfp{
+    width: 4rem;
+}

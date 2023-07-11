@@ -23,6 +23,12 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
+    if client_signed_in?
+      @article.client.id = current_client.id
+    else
+      @article.client_id = 2
+    end
+
     respond_to do |format|
       if @article.save
         format.html { redirect_to article_url(@article), notice: "Article was successfully created." }

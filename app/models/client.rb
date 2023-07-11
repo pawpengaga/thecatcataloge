@@ -4,8 +4,8 @@ class Client < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :articles
-  has_many :reactions
-  has_many :opinions
+  has_many :articles, dependent: :destroy
+  has_many :reactions, dependent: :destroy
+  has_many :opinions, dependent: :destroy
   
 end
