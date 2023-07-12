@@ -1,7 +1,7 @@
 <div class="user-reverlator pt-3 pe-3 text-end">
     <% if client_signed_in? %>
       <span><span class="fw-bold">Sesión iniciada como:</span> <%=current_client.name%></span> <br>
-      <span><span class="fw-bold">Rol:</span> <%=current_client.name%></span><!--.role.to_s-->
+      <span><span class="fw-bold">Rol:</span> <%=current_client.role.to_s%></span><!--.role.to_s-->
     <%end%>
   </div>
   <div class="w-100 d-flex justify-content-center">

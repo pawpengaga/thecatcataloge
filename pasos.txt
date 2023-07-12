@@ -39,3 +39,5 @@ Log.
 
 
 ----------------
+
+8?. rails g migration AddRoleToClients role:integer

@@ -8,4 +8,5 @@ class Client < ApplicationRecord
   has_many :reactions, dependent: :destroy
   has_many :opinions, dependent: :destroy
   
+  enum :role, [:annonymous, :author, :admin]
 end
