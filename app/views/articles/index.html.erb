@@ -1,14 +1,37 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Articles</h1>
-<h1>&#128008; &#128571; &#128574;</h1> <!--UBICACION TEMPORAL, USAR EN BOTONES-->
+<% if show_client_articles %>
 <div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
+  <% if current_client.role == 'admin' || current_client.role == 'author' %>
+  <div class="fs-5 btn mybtn py-2"><i class="fa-solid fa-circle-plus text-white"></i><%= link_to "Redactar entrada", new_article_path, class: "fw-bold ms-2 text-decoration-none text-white" %></div>
+  <% if current_client.articles.count == 0 %>
+    <p class="text-center">No hay entradas a tu nombre</p>
   <% end %>
+<% end %>
+  <% @articles.reverse.each do |article| %>
+    <% if article.client_id == params[:client_id].to_i %>
+      <div class="border my-5 px-5 py-4">
+        <%= render article %>
+        <p class="mb-0">
+          <%= link_to "Ver entrada", article, class:"mt-4 btn mybtn" %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+<!-- ver los posts de todos los usuarios -->
+    <p class="display-2 text-center">Noticias del día</p>
+    <% if current_client.role == 'admin' || current_client.role == 'author' %>
+      <div class="fs-5 btn mybtn py-2"><i class="fa-solid fa-circle-plus text-white"></i><%= link_to "Redactar entrada", new_article_path, class: "fw-bold ms-2 text-decoration-none text-white" %></div>
+      <% if @articles.count == 0 %>
+        <p class="text-center">No hay entradas a tu nombre</p>
+      <% end %>
+    <% end %>
+  <% @articles.reverse.each do |article| %>
+    <div class="border my-5 px-5 py-4">
+      <%= render article %>
+      <p class="mb-0">
+        <%= link_to "Ver entrada", article, class:"mt-4 btn mybtn" %>
+      </p>
+    </div>
+  <% end %>
+<% end %>
 </div>
-
-<%= link_to "New article", new_article_path %>

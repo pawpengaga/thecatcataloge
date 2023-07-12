@@ -1,4 +1,8 @@
 class OpinionsController < ApplicationController
+    before_action only: [:edit, :update, :destroy] do
+        authorize_request(["admin"])
+      end
+      
     def index
         @client = Client.find(params[:client_id])
         @opinions = @client.opinions

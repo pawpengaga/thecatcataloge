@@ -1,7 +1,9 @@
 <div class="user-reverlator pt-3 pe-3 text-end">
     <% if client_signed_in? %>
       <span><span class="fw-bold">Sesión iniciada como:</span> <%=current_client.name%></span> <br>
-      <span><span class="fw-bold">Rol:</span> <%=current_client.role.to_s%></span><!--.role.to_s-->
+      <span><span class="fw-bold">Rol:</span> <%=current_client.role.to_s%></span>
+    <%else%>
+    <span><span class="fw-bold">Usuario:</span> <%=Client.find(2).role.to_s%></span>
     <%end%>
   </div>
   <div class="w-100 d-flex justify-content-center">
@@ -16,7 +18,7 @@
                   <%= link_to edit_client_registration_path, class: "nav-link fw-bold text-white px-4 py-3 mylinks" do%>
                   <span>Mi cuenta</span>
                   <%end%> <!--current_user.name-->
-                  <%= link_to 'Mis entradas', articles_path, class: "nav-link fw-bold text-white px-4 py-3 mylinks" %> <!--client_publications_path(current_client)-->
+                  <%= link_to 'Mis entradas', client_articles_path(current_client), class: "nav-link fw-bold text-white px-4 py-3 mylinks" %>
                   <%= link_to "Salir", destroy_client_session_path, class: "nav-link fw-bold text-white px-4 py-3 mylinks" %>
               <%else%>
                   <%= link_to "Entrar", new_client_session_path, class: "nav-link fw-bold text-white px-4 py-3 mylinks" %>

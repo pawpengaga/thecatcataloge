@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_12_094759) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "photo", default: "https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg"
-    t.string "name"
+    t.string "name", default: "user142"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 1

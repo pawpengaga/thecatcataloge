@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
-  Kinds = %w[like dislike neutral].freeze
-  KindsSpanish = {"like" => "Me gusta", "dislike" => "No me gusta", "neutral" => "Neutral"}.freeze
+  Kinds = %w[like neutral dislike].freeze
+  KindsSpanish = {"like" => "Me gusta", "neutral" => "Normal", "dislike" => "No me gusta"}.freeze
 
   
   belongs_to :client

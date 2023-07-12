@@ -32,8 +32,15 @@ Log.
 ----------------------------------------------
 12.07.2023. LOG
     .Hacer funcionar las reacciones (LISTO)
-    .Hacer la role update
+    .Hacer la role update (LISTO?)
     .Hacer todos los arreglos de usabilidad
+        .Poder ver MIS publicaciones (listo)
+        .Editar los formularios para tener un nombre (Listo)
+        .Ver foto de perfil en los comentarios (Listo)
+        .Como administrador, poder ver el boton de borrar en los comentarios (Listo)
+        .Hacer que los usuarios puedan ver los controles solo en sus publicaciones
+        .Que el administrador pueda ver los controles de todo
+        .Que el anon no pueda ver los controles de nada
     .Estilizar
     .Hacer deploy y morirme GOGOGOGOGOGOGOGOGOGOGOGOGOGOGOGOGOJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMP
 

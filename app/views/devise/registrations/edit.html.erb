@@ -31,6 +31,24 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field mb-3">
+    <%= f.label :name, "Nombre de usuario", class: "mb-2 fw-bold" %> <br>
+    <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
+    <!--Ni idea de que haga el autofocus-->
+  </div>
+
+  <% if current_client.photo.present? %>
+  <h2 class="d-flex align-items-top fw-bold">
+    <%= image_tag current_client.photo, class: "col-2 mb-3 me-3 mt-1" %>
+    Foto de <br> perfil actual
+  </h2>
+
+  <%end%>
+  <div class="field mb-3">
+    <%= f.label :photo, 'Nueva foto de perfil (URL)', class: "mb-2 fw-bold" %> <br>
+    <%= f.text_field :photo, autocomplete: "new-photo", class: "form-control" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
