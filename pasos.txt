@@ -17,4 +17,25 @@ editado el after sign in del ApplicationController
 creado el controlador de comentarios (opiniones)
 Reparado el controlador de comentarios, ahora los comentarios se muestran
 
+reparada la seccion de comentarios, reparada la base de datos
 -----------------------
+
+
+FALTA AGREGAR LOS PARAMS RESPECTIVOS CAMPOS EN EL FORMULARIO!!!!
+(Hacer la role update primero)
+-----------------
+
+Log.
+    No se he podido hacer nada con las reacciones.
+    Nos parametros se envian vacios, culpo al FORMULARIO
+
+----------------------------------------------
+12.07.2023. LOG
+    .Hacer funcionar las reacciones (LISTO)
+    .Hacer la role update
+    .Hacer todos los arreglos de usabilidad
+    .Estilizar
+    .Hacer deploy y morirme GOGOGOGOGOGOGOGOGOGOGOGOGOGOGOGOGOJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMP
+
+
+----------------

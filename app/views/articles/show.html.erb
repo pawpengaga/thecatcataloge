@@ -11,4 +11,10 @@
   <%= link_to "Back to articles", articles_path %>
 
   <%= button_to "Destroy this article", @article, method: :delete %>
+
+  <% Article::Kinds.each do |kind| %>
+    <%= button_to "#{Article::KindsSpanish[kind]}", new_client_reaction_path(reaction: { article_id: @article.id, kind: kind }), method: :post, class: "btn mybtn" %>
+  <% end %>
+
+
 </div>

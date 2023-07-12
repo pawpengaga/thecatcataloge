@@ -12,11 +12,14 @@ class ArticlesController < ApplicationController
 
     @article = Article.find(params[:id])
     @opinions = @article.opinions
+    @reaction = Reaction.new
+
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    
   end
 
   # GET /articles/1/edit

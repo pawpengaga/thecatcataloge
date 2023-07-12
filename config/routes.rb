@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  resources :reactions, only: [:create]
   resources :opinions
-  resources :articles
+
+  resources :articles do
+    resources :reactions
+    resources :opinions
+  end
+
   devise_for :clients, controllers:{
     sessions: 'clients/sessions',
     registrations: 'clients/registrations'
@@ -10,5 +16,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  post 'new_client_reaction', to: 'reactions#new_client_reaction', as: 'new_client_reaction'
   root 'articles#index'
 end

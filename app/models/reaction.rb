@@ -1,5 +1,6 @@
 class Reaction < ApplicationRecord
   belongs_to :article
   belongs_to :client
-  belongs_to :opinion
+
+  validates :client_id, uniqueness: { scope: :article_id }
 end
