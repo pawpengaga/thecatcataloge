@@ -13,17 +13,26 @@
   </div>
 </div>
 
-<%= render 'opinions/form' %>
 
-<% @opinions.reverse.each do |opinion| %>
-  <div class="mb-3"><%= render partial: "opinions/opinion", locals: { opinion: opinion } %></div>
-<% end %>
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
+<div class="row">
+  <div class="col-9">
+    <div class="d-flex justify-content-center">
+      <%if client_signed_in?%>
+      <%if current_client.id == @article.client_id || current_client.role == 'admin' %><br> <!--Solo el autor puede editar sus publicaciones ahora-->
+        <%= link_to "Editar entrada", edit_article_path(@article), class: "btn btn-light mybtn text-white mt-3 mx-4" %>
+        <%= button_to "Eliminar entrada", @article, method: :delete, class: "btn btn-light mybtn text-white mt-3" %>
+      <%end%>
+      <%end%>
+    </div>
 
-  <%= button_to "Destroy this article", @article, method: :delete %>
+    <hr class="my-5">
+    <%= render 'opinions/form' %>
 
-
-  
+    <div class="my-4">
+      <% @opinions.reverse.each do |opinion| %>
+        <div class="mb-3"><%= render partial: "opinions/opinion", locals: { opinion: opinion } %></div>
+      <% end %>
+    </div>
+  </div>
 </div>
+

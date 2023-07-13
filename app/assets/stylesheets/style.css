@@ -1,11 +1,15 @@
 :root{
-    --accent: rgb(228, 30, 96);
-    --seccon: rgb(247, 63, 118);
+    --accent: rgb(6, 200, 214);
+    --seccon: rgb(6, 177, 177);
 }
 
 body{
     font-family: 'Open Sans', sans-serif;
     /* font-family: 'Belanosima', sans-serif; */
+}
+
+a{
+    color: var(--accent);
 }
 
 .myalerts{
@@ -48,3 +52,23 @@ body{
     background-color: #007bff;
     color: white;
   } */
+
+
+  .mysession{
+    width: 2rem;
+}
+
+.user-reverlator{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.myalertshehe{
+    color: var(--accent);
+}
+
+#mycontainer{
+    padding-left: 25rem;
+    padding-right: 25rem;
+}

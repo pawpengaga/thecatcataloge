@@ -18,11 +18,12 @@
   <% end %>
 <% else %>
 <!-- ver los posts de todos los usuarios -->
-    <p class="display-2 text-center">Noticias del día</p>
+    <p class="display-4 text-center">&#128049;Gatitos del día&#128049;</p>
+    <hr class="mb-5 mt-4">
     <% if client_signed_in? && (current_client.role == 'admin' || current_client.role == 'author') %>
       <div class="fs-5 btn mybtn py-2"><i class="fa-solid fa-circle-plus text-white"></i><%= link_to "Redactar entrada", new_article_path, class: "fw-bold ms-2 text-decoration-none text-white" %></div>
       <% if @articles.count == 0 %>
-        <p class="text-center">No hay entradas a tu nombre</p>
+        <p class="text-center">No hay entradas</p>
       <% end %>
     <% end %>
   <% @articles.reverse.each do |article| %>

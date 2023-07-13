@@ -28,6 +28,13 @@ class OpinionsController < ApplicationController
         end
     end
 
+    def destroy
+        @article = Article.find(params[:article_id])
+        @opinion = @article.opinions.find(params[:id])
+        @opinion.destroy
+        redirect_to article_path(@article), notice: 'Comment was successfully deleted.'
+      end
+
     private
 
     def opinion_params

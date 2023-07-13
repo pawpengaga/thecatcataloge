@@ -46,7 +46,7 @@ Log.
 
 13.07.2023. LOG
     .Generar limitaciones de acceso para cosas como crear publicaciones o editarlas
-        .Usar before_action :authenticate_user!
+        .Usar before_action :authenticate_user! (listo)
     .Hacer un scrap de lo que existe en TODAS las vistas del blog payaso
     .Ajustar los controladores y demases en consecuencia
 

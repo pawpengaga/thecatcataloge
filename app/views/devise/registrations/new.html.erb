@@ -1,40 +1,37 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Registro</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field mb-3">
-    <%= f.label :name, "Nombre de usuario", class: "mb-2 fw-bold" %> <br>
-    <%= f.text_field :name, autocomplete: "new-name", class: "form-control" %>
-  </div>
-
-  <div class="col-5">
+<div class="row d-flex justify-content-center mt-4">
+  <div class="col-4">
+    <div class="field mb-3">
+      <%= f.label :email, "Correo electrónico", class: "mb-2 fw-bold" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+    </div>
+    <div class="field mb-3">
+      <%= f.label :password, "Ingrese contraseña", class: "mb-2 fw-bold" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+    </div>
+    <div class="field mb-3">
+      <%= f.label :password_confirmation, "Confirme su contraseña", class: "mb-2 fw-bold" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+    </div>
+    <div class="field mb-3 mt-4">
+      <%= f.label :name, "Nombre de usuario", class: "mb-2 fw-bold" %> <br>
+      <%= f.text_field :name, autocomplete: "new-name", class: "form-control" %>
+    </div>
     <div class="field mb-3">
       <%= f.label :photo, 'Foto de perfil (URL)', class: "mb-2 fw-bold" %> <br>
       <%= f.text_field :photo, autocomplete: "new-photo", class: "form-control" %>
     </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <div class="actions">
+      <%= f.submit "Registrarse", class: "btn mybtn w-100" %>
+    </div>
+    <% end %>
+    <div class="text-end mt-3"><%= render "devise/shared/links" %></div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
