@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
-
   before_action only: [:new, :create, :edit, :update, :destroy] do #Restriccion 1
     authorize_request(["author", "admin"])
   end
@@ -13,11 +12,18 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     @opinion = Opinion.new
-
+  
     @article = Article.find(params[:id])
     @opinions = @article.opinions
     @reaction = Reaction.new
-
+  
+    if client_signed_in?
+      @gatebutton = ""
+      @active_kinds = Article::Kinds.select { |kind| @article.reactions.exists?(client: current_client, kind: kind) }
+    else
+      @gatebutton = "disabled"
+      @active_kinds = []
+    end
   end
 
   # GET /articles/new
@@ -28,6 +34,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    
   end
 
   # POST /articles or /articles.json

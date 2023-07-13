@@ -1,12 +1,12 @@
 <div id="<%= dom_id opinion %>">
     <div class="row">
-        <% if current_client.photo.present? %>
-          <div class="col-1 text-center"><%=image_tag opinion.client.photo, class: "mypfp rounded-circle" %></div>
-        <%end%>
+
+        <div class="col-1 text-center"><%=image_tag opinion.client.photo, class: "mypfp rounded-circle" %></div>
+
         <div class="ms-1 col-10">
           <span class="fw-bold"><%= opinion.client.name%></span> <span class="fst-italic">Created <%= distance_of_time_in_words(opinion.created_at, Time.now, include_seconds: true)%> ago...</span> <br>
           <%= opinion.content %>
-          <% if current_client.role == 'admin' %>
+          <% if client_signed_in? && (current_client.role == 'admin') %>
             <p class="mt-1">
               <%= button_to article_opinion_path(article_id: opinion.article_id, id: opinion.id), method: :delete, class: "btn mybtn" do %>
               Eliminar comentario

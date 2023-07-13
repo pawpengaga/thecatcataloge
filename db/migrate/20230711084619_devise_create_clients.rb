@@ -32,8 +32,8 @@ class DeviseCreateClients < ActiveRecord::Migration[7.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :photo, default: "https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg"
-      t.string :name, default: "user#{rand(54..1665)}"
+      t.string :photo, default: "https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg", null: false
+      t.string :name, default: "user#{rand(54..1665)}", null: false
 
       t.timestamps null: false
     end

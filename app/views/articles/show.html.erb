@@ -1,9 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<div class="row">
+  <div class="col-9"><%= render @article %></div>
+  
+  <div class="col-3 d-flex justify-content-center">
+    <% emojis = ["&#128571;", "&#128008;", "&#128574;"] %>
+    <div class="w-75">
+      <% Article::Kinds.zip(emojis).each do |kind, emoji| %>
+        <% reaction_count = @article.reactions.where(kind: kind).count %>
+        <% active_class = @active_kinds.include?(kind) ? "active" : "" %>
+        <%= button_to "#{emoji} #{Article::KindsSpanish[kind]} (#{reaction_count})".html_safe, new_client_reaction_path(reaction: { article_id: @article.id, kind: kind }), method: :post, class: "btn btn-outline-dark #{active_class} #{@gatebutton} w-100 text-start py-2 mb-2" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= render @article %>
 <%= render 'opinions/form' %>
 
-<% @opinions.each do |opinion| %>
+<% @opinions.reverse.each do |opinion| %>
   <div class="mb-3"><%= render partial: "opinions/opinion", locals: { opinion: opinion } %></div>
 <% end %>
 <div>
@@ -12,9 +24,6 @@
 
   <%= button_to "Destroy this article", @article, method: :delete %>
 
-  <% emojis = ["&#128571;", "&#128008;", "&#128574;"] %>
-  <% Article::Kinds.zip(emojis).each do |kind, emoji| %>
-    <%= button_to "#{emoji} #{Article::KindsSpanish[kind]}".html_safe, new_client_reaction_path(reaction: { article_id: @article.id, kind: kind }), method: :post, class: "btn btn-outline-dark" %>
-  <% end %>
 
+  
 </div>

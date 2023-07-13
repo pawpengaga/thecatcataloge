@@ -44,7 +44,14 @@ Log.
     .Estilizar
     .Hacer deploy y morirme GOGOGOGOGOGOGOGOGOGOGOGOGOGOGOGOGOJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMP
 
+13.07.2023. LOG
+    .Generar limitaciones de acceso para cosas como crear publicaciones o editarlas
+        .Usar before_action :authenticate_user!
+    .Hacer un scrap de lo que existe en TODAS las vistas del blog payaso
+    .Ajustar los controladores y demases en consecuencia
 
+    .Hacer los pasos anteriores
+    .Ver los pasos del bucket del video y generar un documento al respecto antes de empezar con el desafio
 ----------------
 
 8?. rails g migration AddRoleToClients role:integer
